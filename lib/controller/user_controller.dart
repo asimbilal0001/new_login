@@ -12,18 +12,18 @@ class NewUserController extends GetxController {
   GlobalKey<FormState> formKey2 = GlobalKey<FormState>();
 
   void signIn() {
-    if (formKey2.currentState!.validate()) {
-      Get.snackbar('Success', 'User Logged in successfully.');
+    // if (formKey2.currentState!.validate()) {
+      // Get.snackbar('Success', 'User Logged in successfully.');
       Get.to(
           transition: Transition.cupertino,
           duration: Duration(seconds: 1),
           () => HomeScreen());
-    } else {
-      Get.snackbar('Failed', 'Something Went Wrong.',
-          backgroundColor: Colors.red);
+    // } else {
+      // Get.snackbar('Failed', 'Something Went Wrong.',
+          // backgroundColor: Colors.red);
     }
   }
-}
+// }
 
 // class NewUserController2 extends GetxController {
 //   TextEditingController contEmail = TextEditingController();

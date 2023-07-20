@@ -1,13 +1,13 @@
-// class User {
-//   String name;
-//   int age;
-//   String imageURL;
-//   User(
-//     this.name,
-//     this.age,
-//     this.imageURL,
-//   );
-// }
+class User {
+  String name;
+  int age;
+  String imageURL;
+  User(
+    this.name,
+    this.age,
+    this.imageURL,
+  );
+}
 
 // this is model data type defined by us. it stores our structurized data.
 // for the data class we want to store
