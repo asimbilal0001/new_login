@@ -22,32 +22,56 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text('Welcome to the Home Screen !'),
         backgroundColor: Colors.blue.shade300,
       ),
-      body: SizedBox(
-        height: 200,
-        child: Padding(
-          padding: EdgeInsets.only(top: 10),
-          child: CarouselSlider(
-            options: CarouselOptions(
-              autoPlay: true,
-              enlargeCenterPage: true,
-              viewportFraction: 0.5,
-              autoPlayInterval: Duration(seconds: 3),
-              height: 200.0,
-            ),
-            items: c.names.map((i) {
-              return Container(
-                width: MediaQuery.of(context).size.width,
-                margin: EdgeInsets.symmetric(horizontal: 5),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10)),
-                child: Center(
-                  child: Image.network('$i'),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 200,
+            child: Padding(
+              padding: EdgeInsets.only(top: 10),
+              child: CarouselSlider(
+                options: CarouselOptions(
+                  autoPlay: true,
+                  enlargeCenterPage: true,
+                  viewportFraction: 0.5,
+                  autoPlayInterval: Duration(seconds: 3),
+                  height: 200.0,
                 ),
-              );
-            }).toList(),
+                items: c.names.map((i) {
+                  return Container(
+                    width: MediaQuery.of(context).size.width,
+                    margin: EdgeInsets.symmetric(horizontal: 5),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Center(
+                      child: Image.network('$i'),
+                    ),
+                  );
+                }).toList(),
+              ),
+            ),
           ),
-        ),
+          Padding(
+            padding: EdgeInsets.only(top: 10),
+            child: Column(
+              children: [
+                Text(
+                  'Categories',
+                  style: TextStyle(
+                    fontSize: 30,
+                    color: Colors.black,
+                  ),
+                ),
+                ListView.builder(
+                  itemCount: c.names.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return ;
+                  },
+                ),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
