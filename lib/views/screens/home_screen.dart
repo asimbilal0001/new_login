@@ -51,26 +51,50 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.only(top: 10),
-            child: Column(
-              children: [
-                Text(
-                  'Categories',
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.black,
-                  ),
+          Text('categories',
+              style: TextStyle(
+                fontSize: 25,
+              )),
+          Expanded(
+              child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: c.names.length,
+            itemBuilder: (context, index) {
+              return Container(
+                padding: EdgeInsets.all(8),
+                child: Column(
+                  children: [
+                    Image.network(
+                      c.names[index],
+                      width: 500,
+                    ),
+                    Text('this'),
+                  ],
                 ),
-                ListView.builder(
-                  itemCount: c.names.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return ;
-                  },
-                ),
-              ],
-            ),
-          )
+              );
+            },
+          )),
+          Expanded(
+              child: GridView.builder(
+            gridDelegate:
+                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+            itemCount: c.names.length,
+            itemBuilder: (context, index) {
+              return Container(
+                  padding: EdgeInsets.all(8),
+                  decoration: BoxDecoration(),
+                  child: Container(
+                      child: Column(
+                    children: [
+                      Image.network(
+                        c.names[index],
+                        fit: BoxFit.cover,
+                      ),
+                      Text('this is ')
+                    ],
+                  )));
+            },
+          ))
         ],
       ),
     );
