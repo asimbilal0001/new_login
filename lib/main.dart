@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:new_login/views/description.dart';
 import 'package:new_login/views/screens/Signin_screen.dart';
+import 'package:new_login/views/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +30,9 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: SignInScreen(),
+      // home: SignInScreen(),
+      // initialBinding: ,
+      home: HomeScreen(),
     );
   }
 }

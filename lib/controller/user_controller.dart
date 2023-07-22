@@ -13,35 +13,21 @@ class NewUserController extends GetxController {
 
   void signIn() {
     // if (formKey2.currentState!.validate()) {
-      // Get.snackbar('Success', 'User Logged in successfully.');
-      Get.to(
-          transition: Transition.cupertino,
-          duration: Duration(seconds: 1),
-          () => HomeScreen());
+    Get.snackbar('Success', 'User Logged in successfully.');
+    Get.to(
+        transition: Transition.cupertino,
+        duration: Duration(seconds: 1),
+        () => HomeScreen());
     // } else {
-      // Get.snackbar('Failed', 'Something Went Wrong.',
-          // backgroundColor: Colors.red);
-    }
+    //   Get.snackbar('Failed', 'Something Went Wrong.',
+    //       backgroundColor: Colors.red);
+    // }
+    clearFields();
   }
-// }
 
-// class NewUserController2 extends GetxController {
-//   TextEditingController contEmail = TextEditingController();
-//   TextEditingController contPass = TextEditingController();
-//   TextEditingController contName = TextEditingController();
-
-//   GlobalKey<FormState> formKey = GlobalKey<FormState>();
-
-//   void signIn() {
-//     if (formKey.currentState!.validate()) {
-//       Get.snackbar('Success', 'User Logged in successfully.');
-//       Get.to(
-//           transition: Transition.cupertino,
-//           duration: Duration(seconds: 1),
-//           () => HomeScreen());
-//     } else {
-//       Get.snackbar('Failed', 'Something Went Wrong.',
-//           backgroundColor: Colors.red);
-//     }
-//   }
-// }
+  clearFields() {
+    contEmail.clear();
+    contName.clear();
+    contPass.clear();
+  }
+}

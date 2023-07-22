@@ -13,8 +13,6 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-
-
   final b = Get.put(NewUserController());
   // This widget is the root of your application.
   @override
@@ -72,12 +70,17 @@ class _RegisterPageState extends State<RegisterPage> {
                             children: [
                           WidgetSpan(
                               child: InkWell(
-                            child: const Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 8.0),
-                              child: Text('Sign in'),
-                            ),
-                            onTap: () => Get.to(() => SignInScreen()),
-                          ))
+                                  child: const Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 8.0),
+                                    child: Text('Sign in'),
+                                  ),
+                                  onTap: () {
+                                    Get.back();
+                                    b.contEmail.clear();
+                                    b.contName.clear();
+                                    b.contPass.clear();
+                                  }))
                         ])),
                   ],
                 ),
